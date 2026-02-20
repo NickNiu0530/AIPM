@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Product Manager Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        // EmailJS用户ID（公钥）
+        emailjs.init('_jK91U-fwVsEbboZF');
+    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#6366f1',
+                        accent: '#10b981',
+                        dark: '#1e293b',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                background-image: linear-gradient(to right, #3b82f6, #6366f1);
+            }
+            .bg-gradient {
+                background-image: linear-gradient(to right, #3b82f6, #6366f1);
+            }
+            .skill-bar {
+                @apply h-2 rounded-full bg-gray-200 overflow-hidden;
+            }
+            .skill-progress {
+                @apply h-full rounded-full bg-gradient transition-all duration-1000 ease-out;
+            }
+            .timeline-item {
+                @apply relative pl-8 pb-10 border-l-2 border-gray-200;
+            }
+            .timeline-item::before {
+                content: '';
+                @apply absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-white;
+            }
+            .timeline-item:last-child {
+                @apply border-l-2 border-gray-200 pb-0;
+            }
+            .card {
+                @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300;
+            }
+            .btn {
+                @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+            }
+            .btn-primary {
+                @apply bg-gradient text-white hover:opacity-90;
+            }
+            .btn-outline {
+                @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gradient">AI PM Resume</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-primary transition-colors" data-lang-key="about">About</a>
+                <a href="#skills" class="text-gray-600 hover:text-primary transition-colors" data-lang-key="skills">Skills</a>
+                <a href="#projects" class="text-gray-600 hover:text-primary transition-colors" data-lang-key="projects">Projects</a>
+                <a href="#experience" class="text-gray-600 hover:text-primary transition-colors" data-lang-key="experience">Experience</a>
+                <a href="#education" class="text-gray-600 hover:text-primary transition-colors" data-lang-key="education">Education</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary transition-colors" data-lang-key="contact">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="lang-toggle" class="btn btn-outline px-4 py-2 text-sm">
+                    <span data-lang-key="language">中文</span>
+                </button>
+                <button class="md:hidden text-gray-600 focus:outline-none" id="menu-toggle">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white shadow-md absolute w-full" id="mobile-menu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="#about" class="text-gray-600 hover:text-primary transition-colors py-2" data-lang-key="about">About</a>
+                <a href="#skills" class="text-gray-600 hover:text-primary transition-colors py-2" data-lang-key="skills">Skills</a>
+                <a href="#projects" class="text-gray-600 hover:text-primary transition-colors py-2" data-lang-key="projects">Projects</a>
+                <a href="#experience" class="text-gray-600 hover:text-primary transition-colors py-2" data-lang-key="experience">Experience</a>
+                <a href="#education" class="text-gray-600 hover:text-primary transition-colors py-2" data-lang-key="education">Education</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary transition-colors py-2" data-lang-key="contact">Contact</a>
+                <button id="mobile-lang-toggle" class="btn btn-outline px-4 py-2 text-sm w-full">
+                    <span data-lang-key="language">中文</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" data-lang-key="hero_title">
+                        Hi, I'm <span class="text-gradient">牛楷</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-gray-600" data-lang-key="hero_subtitle">
+                        Aspiring AI Product Manager
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-8 max-w-lg" data-lang-key="hero_desc">
+                        Passionate about leveraging artificial intelligence to solve complex problems and create user-centric products that deliver exceptional value. With strong background in translation and interpreting, and hands-on experience in AI product management.
+                    </p>
+                    <div class="mb-6">
+                        <p class="text-gray-700 mb-2"><i class="fa fa-phone mr-2 text-primary"></i> +86 15895234178</p>
+                        <p class="text-gray-700 mb-2"><i class="fa fa-envelope mr-2 text-primary"></i> niukai@ruc.edu.cn</p>
+                        <p class="text-gray-700"><i class="fa fa-map-marker mr-2 text-primary"></i> Beijing, China</p>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fa fa-envelope mr-2"></i> <span data-lang-key="contact_me">Contact Me</span>
+                        </a>
+                        <a href="#projects" class="btn btn-outline">
+                            <i class="fa fa-briefcase mr-2"></i> <span data-lang-key="view_projects">View Projects</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                            <!-- 请将照片保存为 "profile_photo.jpg" 并放在与HTML文件相同的目录中 -->
+                            <!-- 然后取消注释下面的代码，并注释掉上面的API调用代码 -->
+                            <img src="profile_photo.jpg" alt="牛楷" class="w-full h-full object-cover">
+                            
+                            <!-- 临时解决方案：使用Base64编码的照片 -->
+                            <!-- <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAKAAkDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAvEODEQ==' alt="牛楷" class="w-full h-full object-cover"> -->
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-white rounded-lg shadow-lg p-4">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                                    <i class="fa fa-check text-green-500"></i>
+                                </div>
+                                <span class="font-medium">Ready to Innovate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-lang-key="about_title">About Me</h2>
+                <div class="w-20 h-1 bg-gradient mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="about_desc">
+                    A results-driven professional with a strong technical background and hands-on experience in AI technologies, dedicated to creating innovative product solutions.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-code text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" data-lang-key="technical_skills">Technical Skills</h3>
+                    <p class="text-gray-600">Python, SQL, Machine Learning, Deep Learning</p>
+                </div>
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-lightbulb-o text-2xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" data-lang-key="product_management">Product Management</h3>
+                    <p class="text-gray-600">User Research, PRD Writing, Agile Methodology</p>
+                </div>
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-brain text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" data-lang-key="ai_expertise">AI Expertise</h3>
+                    <p class="text-gray-600">NLP, Computer Vision, Model Evaluation</p>
+                </div>
+                <div class="card text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-users text-2xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" data-lang-key="soft_skills">Soft Skills</h3>
+                    <p class="text-gray-600">Communication, Collaboration, Problem-Solving</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-lang-key="awards_honors">Awards & Honors</h2>
+                <div class="w-20 h-1 bg-gradient mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="awards_desc">
+                    Recognitions and achievements that demonstrate my dedication and excellence in academic and professional pursuits.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <div class="card">
+                        <h3 class="text-xl font-semibold mb-4" data-lang-key="scholarships">Scholarships</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fa fa-trophy text-yellow-500 mt-1 mr-3"></i>
+                                <span data-lang-key="scholarship_item">2020-2023 | 连续三年获得国家励志奖学金、校长一等奖学金</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="text-xl font-semibold mb-4" data-lang-key="competitions_awards">Competitions & Awards</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fa fa-trophy text-yellow-500 mt-1 mr-3"></i>
+                                <span data-lang-key="award_item1">2022-2025 | 先后获全国行业+英语能力大赛医学方向高校组一等奖、全国高校商务英语竞赛英语专业组一等奖、全国大学生英语竞赛B类国家级一等奖、中华笔译大赛英汉互译（医学）半决赛一等奖</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-trophy text-yellow-500 mt-1 mr-3"></i>
+                                <span data-lang-key="award_item2">2022-2025 | 外研社·国才杯理解当代中国口译国赛银奖、中西部翻译大赛口译决赛一等奖、湖北省翻译大赛口译决赛二等奖与特等奖（第一名）等多项国家级、省级英语赛事重大奖</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-lang-key="core_competencies">Core Competencies</h2>
+                <div class="w-20 h-1 bg-gradient mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="skills_desc">
+                    My technical and professional skills that make me an ideal candidate for AI Product Manager roles.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Technical Skills -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8 text-center" data-lang-key="technical_skills_title">Technical Skills</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Machine Learning</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Natural Language Processing</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Python</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Data Analysis</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Model Evaluation</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Language & Soft Skills -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8 text-center" data-lang-key="language_skills_title">Language & Soft Skills</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium" data-lang-key="lang_english">English (Fluent, Professional Interpreting/Translation)</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium" data-lang-key="lang_cantonese">Cantonese (Daily Communication)</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium" data-lang-key="lang_japanese">Japanese (Daily Communication)</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium" data-lang-key="lang_indonesian">Indonesian (Daily Communication)</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium" data-lang-key="lang_mandarin">Mandarin (Fluent, Grade 2 Level A)</span>
+                                <span>100%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Personal Projects -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-semibold mb-8 text-center" data-lang-key="personal_projects">Personal Projects</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <a href="indonesian_tts_native.html" class="card hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex items-center mb-3">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fa fa-microphone text-xl text-primary"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold" data-lang-key="project_indonesian_tts">印尼语TTS语音合成系统</h4>
+                        </div>
+                        <p class="text-gray-600 mb-4" data-lang-key="project_indonesian_tts_desc">自主搭建的印尼语文本转语音系统，支持语音克隆功能，可根据用户录音生成个性化语音。</p>
+                        <span class="text-sm text-primary flex items-center" data-lang-key="view_project">
+                            <i class="fa fa-external-link mr-1"></i> 查看项目
+                        </span>
+                    </a>
+                    <div class="card">
+                        <div class="flex items-center mb-3">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fa fa-code text-xl text-green-500"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold" data-lang-key="project_ai_translation">AI辅助翻译工具</h4>
+                        </div>
+                        <p class="text-gray-600" data-lang-key="project_ai_translation_desc">结合机器学习和NLP技术开发的翻译辅助工具，提高专业翻译效率和准确性。</p>
+                    </div>
+                    <a href="youtube_subtitle_scraper.html" class="card hover:shadow-xl transition-shadow duration-300">
+                        <div class="flex items-center mb-3">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fa fa-youtube-play text-xl text-purple-500"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold" data-lang-key="project_youtube_subtitle">YouTube字幕爬取脚本</h4>
+                        </div>
+                        <p class="text-gray-600 mb-4" data-lang-key="project_youtube_subtitle_desc">使用yt-dlp库开发的YouTube字幕自动下载和转换工具，支持英语字幕提取和格式转换。</p>
+                        <span class="text-sm text-primary flex items-center" data-lang-key="view_project">
+                            <i class="fa fa-external-link mr-1"></i> 查看项目
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-lang-key="ai_project_experience">AI Project Experience</h2>
+                <div class="w-20 h-1 bg-gradient mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="projects_desc">
+                    Showcase of my hands-on experience with AI technologies and product development.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="card">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-semibold" data-lang-key="doubao_project">豆包英语口语练习核心项目全流程优化</h3>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium" data-lang-key="company_bytedance">字节跳动</span>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-lang-key="doubao_project_desc">
+                        作为项目Owner牵头全流程推进，定义调研边界与细分人群（职场晋升面试、留学雅思备考、日常交流用户），通过多维度研究方法系统拆解用户痛点。
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span data-lang-key="doubao_point1">通过问卷调研（回收有效样本2000+）、深度用户访谈（50+人次）、产品后台数据痛点分析等多维度手段，系统拆解不同人群的使用场景、回复机制偏好、缺乏持续练习动力等核心诉求</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span data-lang-key="doubao_point2">基于用户画像与痛点评析，主导设计差异化解决方案：搭建"初级-中级-高级"三级别难度分层体系（匹配不同英语基础用户），制定场景对话的输出逻辑规范（强化自然与适配性），从内容、交互等方面优化用户使用体验</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span data-lang-key="doubao_point3">联动算法团队完成需求对齐，输出国家标准产品需求文档（PRD），明确评测体系与验收标准，同步调研数据与用户行为洞察，协助算法团队优化模型适配逻辑，保障解决方案的技术落地可行性</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span data-lang-key="doubao_point4">同步开展主流英语口语练习竞品模型对比评测，选取主流口语训练核心产品，围绕ASR（准确率）、TTS（音色自然度、语调流畅性、情感贴合度、生成连贯性）与回复内容表现（准确性、话题承接推进力、难易度适配性、场景贴合度）核心维度，完成针对性对比分析，提炼产品差异化优化方向</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded text-sm" data-lang-key="tag_product_management">产品管理</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded text-sm" data-lang-key="tag_user_research">用户研究</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded text-sm" data-lang-key="tag_competitive_analysis">竞品分析</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded text-sm" data-lang-key="tag_prd_writing">PRD撰写</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="card">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-semibold" data-lang-key="voice_cloning_project">音色克隆模型稳定性评测优化</h3>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium" data-lang-key="company_bytedance">字节跳动</span>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-lang-key="voice_cloning_project_desc">
+                        作为项目Owner牵头全流程评测，明确总理新闻发布会、内部技术会议场景的评测标准，搭建"策略对比+效果量化"评测框架，聚焦ROI核心目标设计对比方案。
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span data-lang-key="voice_cloning_point1">评测各策略ROI，定位降噪效果、内核技术</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span data-lang-key="voice_cloning_point2">明确音色相似度、语速适配性、发音准确性、性别匹配度、内容幻觉五大核心评测维度，推动多轮测试，系统性对比3种参数调整策略与线上原有策略的表现差异</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span data-lang-key="voice_cloning_point3">拉齐评价标准，梳理关键问题：包括克隆音色相似度不足、语速过快、英语口音偏差、性别错误及内容幻觉等模型劣化点，并撰写评估报告</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                            <span data-lang-key="voice_cloning_point4">联动技术团队同步评测结果，基于ROI优先拆解问题根因，输出针对性优化建议，推动策略迭代方向对齐，为模型效果提升提供数据支撑</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded text-sm" data-lang-key="tag_model_evaluation">模型评测</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded text-sm" data-lang-key="tag_data_analysis">数据分析</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded text-sm" data-lang-key="tag_strategy_optimization">策略优化</span>
+                        <span class="px-2 py-1 bg-gray-100 text-gray-800 rounded text-sm" data-lang-key="tag_report_writing">报告撰写</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-lang-key="professional_experience">Professional Experience</h2>
+                <div class="w-20 h-1 bg-gradient mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="experience_desc">
+                    My work experience and contributions to AI and product management projects.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                        <h3 class="text-xl font-semibold" data-lang-key="pdi_language_center">Product R&D and Engineering Architecture - PDI Language Center</h3>
+                        <span class="text-gray-500">2025.11 - 2026.01</span>
+                    </div>
+                    <h4 class="text-lg text-gray-600 mb-4">Bytedance</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
+                            <span data-lang-key="pdi_language_center_desc">为PICO、TT及Data团队提供日常笔译、同声传译等专业语言支持，覆盖产品需求文档、InfoSec培训及跨团队沟通材料等场景，保障中外协作顺畅</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
+                            <span data-lang-key="pdi_language_center_point2">深度参与语音模型迭代，聚焦模型效果及音色克隆策略开展专项评测，设计贴合业务场景的评测维度与用例，输出模型评测表现痛点</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
+                            <span data-lang-key="pdi_language_center_point3">负责ALLQA non-critical数据验收工作，梳理数据完整性、准确性等核心校验要点，协助建立标准化校验流程，全程跟进数据质量核查与问题整改，确保输入模型的数据符合业务及技术要求</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                        <h3 class="text-xl font-semibold" data-lang-key="asr_strategy">Audio-Visual Model - Voice - ASR Strategy and Delivery</h3>
+                        <span class="text-gray-500">2025.06 - 2025.11</span>
+                    </div>
+                    <h4 class="text-lg text-gray-600 mb-4">Bytedance</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
+                            <span data-lang-key="asr_strategy_desc">参与豆包英语口语练习核心项目全流程优化，覆盖数据供应商筛选、资质审核及语料质量基础校验等供应商管理工作</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
+                            <span data-lang-key="asr_strategy_point2">协助梳理内容话题分类与难度分级逻辑，搭建内容质量体系雏形，同时配合推进豆包英语训练复盘评测机制</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
+                            <span data-lang-key="asr_strategy_point3">参与评测维度设计与流程优化，对接Data团队对模型优化标准与评估指标</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
+                            <span data-lang-key="asr_strategy_point4">支持汉英/英汉口译SFT同传模型训练、制标与评测框架搭建等优化任务，对模型效果及音色克隆策略开展专项评测，为产品体验提升夯实基础</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Experience 3 -->
+                <div class="timeline-item">
+                    <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                        <h3 class="text-xl font-semibold" data-lang-key="english_teaching">英语+口译教研</h3>
+                        <span class="text-gray-500" data-lang-key="period_present">2021 - 至今</span>
+                    </div>
+                    <h4 class="text-lg text-gray-600 mb-4" data-lang-key="freelancer">自由职业</h4>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
+                            <span data-lang-key="english_teaching_desc">深耕英语全年龄段教研与授课工作，覆盖学龄前儿童至成人全学段，在教学实践中积累了扎实的学情分析与研究能力</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
+                            <span data-lang-key="english_teaching_point2">通过与不同年龄、基础的学生深度互动，快速精准捕捉其英语学习痛点，基于此输出适配性学习方案</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-arrow-right text-primary mt-1 mr-2"></i>
+                            <span data-lang-key="english_teaching_point3">建立"教学反馈-教研迭代"的闭环机制，结合学生课堂表现、课后反馈持续优化教学内容，强化对学生需求的洞察、精准定位及针对性解决方案输出的能力</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-lang-key="education_certifications">Education & Certifications</h2>
+                <div class="w-20 h-1 bg-gradient mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="education_desc">
+                    My academic background and professional certifications that support my AI Product Manager career.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Education -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8 text-center" data-lang-key="education">Education</h3>
+                    
+                    <div class="card mb-6">
+                    <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                        <h4 class="text-xl font-semibold" data-lang-key="master_degree">Master - English Interpretation</h4>
+                        <span class="text-gray-500">2024.09 - Present</span>
+                    </div>
+                    <h5 class="text-lg text-gray-600 mb-4" data-lang-key="master_university">Renmin University of China</h5>
+                        <div class="space-y-2">
+                            <p class="flex items-center">
+                                <i class="fa fa-graduation-cap text-primary mr-2"></i>
+                                <span data-lang-key="master_gpa">GPA: 3.98/4.0 (专业前2%)</span>
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fa fa-award text-primary mr-2"></i>
+                                <span data-lang-key="master_awards">奖项: 二等奖学金、校三好学生</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                            <h4 class="text-xl font-semibold" data-lang-key="bachelor_degree">学士 - 翻译专业</h4>
+                            <span class="text-gray-500">2020.09 - 2024.06</span>
+                        </div>
+                        <h5 class="text-lg text-gray-600 mb-4" data-lang-key="bachelor_university">天津外国语大学</h5>
+                        <div class="space-y-2">
+                            <p class="flex items-center">
+                                <i class="fa fa-graduation-cap text-primary mr-2"></i>
+                                <span data-lang-key="bachelor_gpa">GPA: 4.29/5.0 (专业前2%)</span>
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fa fa-award text-primary mr-2"></i>
+                                <span data-lang-key="bachelor_scholarship">奖学金: 连续三年获得国家励志奖学金、校长一等奖学金</span>
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fa fa-star text-primary mr-2"></i>
+                                <span data-lang-key="bachelor_admission">2023年09月保送中国人民大学英语口译专业硕士学位</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certifications -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8 text-center" data-lang-key="certifications">Certifications</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="card relative group">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-certificate text-xl text-primary"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold" data-lang-key="cert_catti">CATTI Level 1 Interpreting (Highest Level, Only Single-digit Pass Rate in the Province)</h4>
+                            </div>
+                            <p class="text-gray-600" data-lang-key="cert_catti_org">Ministry of Human Resources and Social Security of the People's Republic of China</p>
+                            <div class="absolute inset-0 bg-white rounded-xl shadow-lg p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                                <p class="text-sm" data-lang-key="cert_catti_desc">National Translation Professional Qualification (Level) Examination Level 1 Interpreting Certificate, the highest level of professional certification in the translation industry</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card relative group">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-certificate text-xl text-green-500"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold" data-lang-key="cert_unlpp">UNLPP口译P2</h4>
+                            </div>
+                            <p class="text-gray-600" data-lang-key="cert_unlpp_org">联合国语言人才培训体系</p>
+                            <div class="absolute inset-0 bg-white rounded-xl shadow-lg p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                                <p class="text-sm" data-lang-key="cert_unlpp_desc">联合国语言人才培训体系口译P2级证书，具备联合国文件翻译能力</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card relative group">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-certificate text-xl text-purple-500"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold" data-lang-key="cert_shanghai">上海外语口译高级口译证书</h4>
+                            </div>
+                            <p class="text-gray-600" data-lang-key="cert_shanghai_org">上海市外语口译岗位资格证书考试委员会</p>
+                            <div class="absolute inset-0 bg-white rounded-xl shadow-lg p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                                <p class="text-sm" data-lang-key="cert_shanghai_desc">上海外语口译证书考试高级，证明高级口译能力</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card relative group">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-certificate text-xl text-yellow-500"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold" data-lang-key="cert_bec">BEC高级</h4>
+                            </div>
+                            <p class="text-gray-600" data-lang-key="cert_bec_org">剑桥大学考试委员会</p>
+                            <div class="absolute inset-0 bg-white rounded-xl shadow-lg p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                                <p class="text-sm" data-lang-key="cert_bec_desc">剑桥商务英语证书高级，全球认可的商务英语能力证明</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card relative group">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-certificate text-xl text-green-500"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold" data-lang-key="cert_toeic">托业890</h4>
+                            </div>
+                            <p class="text-gray-600" data-lang-key="cert_toeic_org">美国教育考试服务中心</p>
+                            <div class="absolute inset-0 bg-white rounded-xl shadow-lg p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                                <p class="text-sm" data-lang-key="cert_toeic_desc">托业考试成绩890分，证明专业英语能力</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card relative group">
+                            <div class="flex items-center mb-3">
+                                <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-certificate text-xl text-red-500"></i>
+                                </div>
+                                <h4 class="text-lg font-semibold" data-lang-key="cert_medical">医学英语四级</h4>
+                            </div>
+                            <p class="text-gray-600" data-lang-key="cert_medical_org">全国医学英语考试委员会</p>
+                            <div class="absolute inset-0 bg-white rounded-xl shadow-lg p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                                <p class="text-sm" data-lang-key="cert_medical_desc">医学英语专业四级证书，证明医学专业英语能力</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Translation Experience -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-lang-key="professional_translation">Professional Translation Experience</h2>
+                <div class="w-20 h-1 bg-gradient mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="translation_desc">
+                    Extensive experience in consecutive and simultaneous interpreting for international events, government meetings, and corporate conferences.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Consecutive Interpreting -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8 text-center" data-lang-key="consecutive_interpreting">Consecutive Interpreting</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="card">
+                            <h4 class="text-lg font-semibold mb-2" data-lang-key="translation_international">International Events</h4>
+                            <p class="text-gray-600" data-lang-key="translation_international_desc">Belt and Road Seminars, World IoT Conference</p>
+                        </div>
+                        
+                        <div class="card">
+                            <h4 class="text-lg font-semibold mb-2" data-lang-key="translation_government">Government & Embassies</h4>
+                            <p class="text-gray-600" data-lang-key="translation_government_desc">NDRC/MCT training courses, foreign embassies/ambassadors</p>
+                        </div>
+                        
+                        <div class="card">
+                            <h4 class="text-lg font-semibold mb-2" data-lang-key="translation_corporate">Corporate & Medical</h4>
+                            <p class="text-gray-600" data-lang-key="translation_corporate_desc">Alibaba DMEG, medical expert exchanges, cultural tourism events</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Simultaneous Interpreting -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8 text-center" data-lang-key="simultaneous_interpreting">Simultaneous Interpreting</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="card">
+                            <h4 class="text-lg font-semibold mb-2" data-lang-key="simultaneous_academic">Academic & Diplomatic</h4>
+                            <p class="text-gray-600" data-lang-key="simultaneous_academic_desc">Renmin University forums, Japanese Ambassador to China, ISO meetings</p>
+                        </div>
+                        
+                        <div class="card">
+                            <h4 class="text-lg font-semibold mb-2" data-lang-key="simultaneous_corporate">Corporate & Government</h4>
+                            <p class="text-gray-600" data-lang-key="simultaneous_corporate_desc">Top internet company technical conferences, Hebei Tourism Development Conference</p>
+                        </div>
+                        
+                        <div class="card">
+                            <h4 class="text-lg font-semibold mb-2" data-lang-key="simultaneous_major">Major Events</h4>
+                            <p class="text-gray-600" data-lang-key="simultaneous_major_desc">China-Africa cooperation surveys, "Belt and Road" sustainable development forums</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Skills Demonstration -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-lang-key="ai_skills">AI Skills Demonstration</h2>
+                <div class="w-20 h-1 bg-gradient mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="ai_skills_desc">
+                    My hands-on experience and expertise in applying AI technologies to solve real-world problems.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa fa-comment text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center" data-lang-key="skill_llm">Large Language Models</h3>
+                    <p class="text-gray-600 text-center" data-lang-key="skill_llm_desc">
+                        Proficient in using LLMs for content generation, summarization, question answering, and conversational AI applications.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa fa-sliders text-2xl text-green-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center" data-lang-key="skill_model">Model Optimization</h3>
+                    <p class="text-gray-600 text-center" data-lang-key="skill_model_desc">
+                        Experienced in fine-tuning models for specific use cases, optimizing hyperparameters, and improving model performance.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa fa-database text-2xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center" data-lang-key="skill_data">Data Preparation</h3>
+                    <p class="text-gray-600 text-center" data-lang-key="skill_data_desc">
+                        Skilled in data collection, cleaning, feature engineering, and preparing datasets for model training and evaluation.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div class="card">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa fa-shield text-2xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center" data-lang-key="skill_ethics">AI Ethics & Responsible AI</h3>
+                    <p class="text-gray-600 text-center" data-lang-key="skill_ethics_desc">
+                        Knowledgeable about AI ethics, bias mitigation, fairness, transparency, and responsible AI deployment practices.
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa fa-briefcase text-2xl text-red-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center" data-lang-key="skill_business">Business Requirements Translation</h3>
+                    <p class="text-gray-600 text-center" data-lang-key="skill_business_desc">
+                        Capable of translating business requirements into technical specifications for AI solutions that deliver value.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-lang-key="get_in_touch">Get in Touch</h2>
+                <div class="w-20 h-1 bg-gradient mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto" data-lang-key="contact_desc">
+                    Interested in discussing how I can contribute to your team as an AI Product Manager? Reach out to me!
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Contact Information -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6" data-lang-key="contact_information">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-phone text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900" data-lang-key="phone">Phone</h4>
+                                    <p class="text-gray-600">+86 15895234178</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-envelope text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900" data-lang-key="email">Email</h4>
+                                    <p class="text-gray-600">niukai@ruc.edu.cn</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-map-marker text-purple-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900" data-lang-key="location">Location</h4>
+                                    <p class="text-gray-600">Beijing, China</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6" data-lang-key="send_message">Send Me a Message</h3>
+                        
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2" data-lang-key="name">Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="Your name">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2" data-lang-key="email">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="Your email">
+                            </div>
+                            
+                            <div>
+                                <label for="title" class="block text-gray-700 font-medium mb-2" data-lang-key="subject">Subject</label>
+                                <input type="text" id="title" name="title" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="Subject">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2" data-lang-key="message">Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="Your message"></textarea>
+                            </div>
+                            
+                            <div>
+                                <label for="time" class="block text-gray-700 font-medium mb-2">Time</label>
+                                <input type="text" id="time" name="time" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="Preferred time">
+                            </div>
+                            
+                            <button type="submit" class="w-full btn btn-primary">
+                                <i class="fa fa-paper-plane mr-2"></i> <span data-lang-key="send">Send Message</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-dark text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-2xl font-bold text-gradient">AI PM Resume</h3>
+                    <p class="text-gray-400 mt-2">Aspiring AI Product Manager</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#about" class="text-gray-400 hover:text-white transition-colors" data-lang-key="about">About</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white transition-colors" data-lang-key="skills">Skills</a>
+                    <a href="#projects" class="text-gray-400 hover:text-white transition-colors" data-lang-key="projects">Projects</a>
+                    <a href="#experience" class="text-gray-400 hover:text-white transition-colors" data-lang-key="experience">Experience</a>
+                    <a href="#education" class="text-gray-400 hover:text-white transition-colors" data-lang-key="education">Education</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">© 2026 Niu Kai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Contact Form Submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const title = document.getElementById('title').value;
+                    const message = document.getElementById('message').value;
+                    const time = document.getElementById('time').value;
+                    
+                    if (!name || !email || !title || !message) {
+                        // Check current language
+                        const currentLang = document.documentElement.lang === 'en' ? 'en' : 'zh';
+                        alert(currentLang === 'en' ? 'Please fill in all required fields' : '请填写所有必填字段');
+                        return;
+                    }
+                    
+                    // Check if EmailJS is initialized
+                    if (!window.emailjs || !window.emailjs.send) {
+                        // Check current language
+                        const currentLang = document.documentElement.lang === 'en' ? 'en' : 'zh';
+                        alert(currentLang === 'en' ? 'Email service is not configured. Please set up EmailJS as instructed in the code.' : '邮件服务未配置。请按照代码中的说明设置EmailJS。');
+                        return;
+                    }
+                    
+                    // Prepare email parameters
+                    const emailParams = {
+                        name: name,
+                        email: email,
+                        title: title,
+                        message: message,
+                        time: time
+                    };
+                    
+                    // Check current language
+                    const currentLang = document.documentElement.lang === 'en' ? 'en' : 'zh';
+                    
+                    // Show loading state
+                    const submitButton = contactForm.querySelector('button[type="submit"]');
+                    const originalButtonText = submitButton.innerHTML;
+                    submitButton.innerHTML = `<i class="fa fa-spinner fa-spin mr-2"></i> ${currentLang === 'en' ? 'Sending...' : '发送中...'}`;
+                    submitButton.disabled = true;
+                    
+                    // Send email using EmailJS
+                    emailjs.send('service_r7z6ckt', 'template_ff7258i', emailParams)
+                        .then(function(response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                            
+                            // Show success message
+                            alert(currentLang === 'en' ? 'Thank you for your message! It has been sent successfully.' : '感谢您的留言！消息已成功发送。');
+                            
+                            // Reset form
+                            contactForm.reset();
+                        }, function(error) {
+                            console.log('FAILED...', error);
+                            
+                            // Show error message
+                            alert(currentLang === 'en' ? 'Failed to send message. Please try again later.' : '发送消息失败，请稍后再试。');
+                        })
+                        .finally(function() {
+                            // Restore button state
+                            submitButton.innerHTML = originalButtonText;
+                            submitButton.disabled = false;
+                        });
+                });
+            }
+        });
+        
+        /*
+        EmailJS配置说明：
+        1. 已设置用户ID（公钥）：_jK91U-fwVsEbboZF
+        2. 服务ID：service_r7z6ckt（Outlook服务）
+        3. 模板ID：template_ff7258i（Contact Us模板）
+        4. 私钥（备用）：aVXE-8WSnjq0ET-aUyx1p
+        
+        【表单结构和变量说明】
+        表单包含以下字段：
+        - name: 发送者姓名
+        - email: 发送者邮箱
+        - title: 邮件主题
+        - message: 邮件内容
+        - time: 首选时间（可选）
+        
+        【配置EmailJS模板】
+        在EmailJS控制台中，编辑模板 "Contact Us" (ID: template_ff7258i)：
+        1. To Email: niukai@ruc.edu.cn
+        2. Subject: Contact Us: {{title}}
+        3. From Name: {{name}}
+        4. Reply To: {{email}}
+        5. 模板内容中使用以下变量：
+           {{name}}
+           {{email}}
+           {{title}}
+           {{message}}
+           {{time}}
+        
+        【测试邮件发送】
+        1. 保存所有更改
+        2. 刷新简历网站
+        3. 填写联系表单并提交
+        4. 检查 niukai@ruc.edu.cn 邮箱（包括垃圾邮件文件夹）
+        
+        【解决垃圾邮件问题】
+        如果邮件被放到垃圾邮箱：
+        - 登录您的邮箱
+        - 找到垃圾邮件中的测试邮件
+        - 将发件人添加到白名单或标记为"非垃圾邮件"
+        - 这样未来的邮件就会直接发送到收件箱
+        */
+        
+        // Language Translation Data
+        const translations = {
+            en: {
+                about: 'About',
+                skills: 'Skills',
+                projects: 'Projects',
+                experience: 'Experience',
+                education: 'Education',
+                contact: 'Contact',
+                language: '中文',
+                hero_title: 'Hi, I\'m Niu Kai',
+                hero_subtitle: 'Aspiring AI Product Manager',
+                hero_desc: 'Passionate about leveraging artificial intelligence to solve complex problems and create user-centric products that deliver exceptional value. With strong background in translation and interpreting, and hands-on experience in AI product management.',
+                contact_me: 'Contact Me',
+                view_projects: 'View Projects',
+                about_title: 'About Me',
+                about_desc: 'A results-driven professional with a strong technical background and hands-on experience in AI technologies, dedicated to creating innovative product solutions.',
+                technical_skills: 'Technical Skills',
+                product_management: 'Product Management',
+                ai_expertise: 'AI Expertise',
+                soft_skills: 'Soft Skills',
+                core_competencies: 'Core Competencies',
+                skills_desc: 'My technical and professional skills that make me an ideal candidate for AI Product Manager roles.',
+                technical_skills_title: 'Technical Skills',
+                language_skills_title: 'Language & Soft Skills',
+                tools_technologies: 'Tools & Technologies',
+                ai_project_experience: 'AI Project Experience',
+                projects_desc: 'Showcase of my hands-on experience with AI technologies and product development.',
+                doubao_project: 'Doubao English Speaking Practice Optimization',
+                doubao_project_desc: 'As project owner, led the end-to-end optimization of Doubao\'s English speaking practice core project, defining research boundaries and segmenting user groups (career promotion interviews, IELTS preparation for study abroad, daily communication users), systematically dismantling user pain points through multi-dimensional research methods.',
+                voice_cloning_project: 'Voice Cloning Model Stability Evaluation Optimization',
+                voice_cloning_project_desc: 'As project owner, led end-to-end evaluation, clarified evaluation standards for Premier\'s press conferences and internal technical meeting scenarios, built a "strategy comparison + effect quantification" evaluation framework, and focused on ROI core goals to design comparison plans.',
+                professional_experience: 'Professional Experience',
+                experience_desc: 'My work experience and contributions to AI and product management projects.',
+                pdi_language_center: 'Product R&D and Engineering Architecture - PDI Language Center',
+                pdi_language_center_desc: 'Provided daily translation, simultaneous interpretation and other professional language support for PICO, TT and Data teams, covering product requirement documents, InfoSec training and cross-team communication materials to ensure smooth Chinese-foreign collaboration.',
+                asr_strategy: 'Audio-Visual Model - Voice - ASR Strategy and Delivery',
+                asr_strategy_desc: 'Participated in the full-process optimization of Doubao\'s English speaking practice core project, covering data supplier screening, qualification review and basic verification of corpus quality and other supplier management work.',
+                english_teaching: 'English + Interpretation Teaching and Research',
+                english_teaching_desc: 'Deeply engaged in English teaching and research work for all age groups, covering preschool children to adults, accumulated solid learning situation analysis and research capabilities in teaching practice.',
+                education_certifications: 'Education & Certifications',
+                education_desc: 'My academic background and professional certifications that support my AI Product Manager career.',
+                master_english: 'Master - English Interpretation',
+                bachelor_translation: 'Bachelor - Translation',
+                certifications: 'Certifications',
+                professional_translation: 'Professional Translation Experience',
+                translation_desc: 'Extensive experience in consecutive and simultaneous interpreting for international events, government meetings, and corporate conferences.',
+                consecutive_interpreting: 'Consecutive Interpreting',
+                simultaneous_interpreting: 'Simultaneous Interpreting',
+                international_events: 'International Events',
+                government_embassies: 'Government & Embassies',
+                corporate_medical: 'Corporate & Medical',
+                academic_diplomatic: 'Academic & Diplomatic',
+                corporate_government: 'Corporate & Government',
+                major_events: 'Major Events',
+                ai_skills: 'AI Skills Demonstration',
+                ai_skills_desc: 'My hands-on experience and expertise in applying AI technologies to solve real-world problems.',
+                large_language_models: 'Large Language Models',
+                model_optimization: 'Model Optimization',
+                data_preparation: 'Data Preparation',
+                ai_ethics: 'AI Ethics & Responsible AI',
+                business_requirements: 'Business Requirements Translation',
+                get_in_touch: 'Get in Touch',
+                contact_desc: 'Interested in discussing how I can contribute to your team as an AI Product Manager? Reach out to me!',
+                contact_information: 'Contact Information',
+                phone: 'Phone',
+                email: 'Email',
+                location: 'Location',
+                connect_with_me: 'Connect With Me',
+                send_message: 'Send Me a Message',
+                name: 'Name',
+                subject: 'Subject',
+                message: 'Message',
+                send: 'Send Message',
+                awards_honors: 'Awards & Honors',
+                awards_desc: 'Recognitions and achievements that demonstrate my dedication and excellence in academic and professional pursuits.',
+                scholarships: 'Scholarships',
+                competitions_awards: 'Competitions & Awards',
+                ready_to_innovate: 'Ready to Innovate',
+                personal_projects: 'Personal Projects',
+                doubao_point1: 'Through questionnaire surveys (2000+ valid samples), in-depth user interviews (50+ people), and product backend data pain point analysis, systematically dismantled core demands such as usage scenarios, reply mechanism preferences, and lack of motivation for continuous practice across different user groups',
+                doubao_point2: 'Based on user portraits and pain point analysis, led the design of differentiated solutions: built a three-level difficulty system (beginner-intermediate-advanced) to match users with different English proficiency levels, established output logic specifications for scenario-based conversations (enhancing naturalness and adaptability), and optimized user experience from content and interaction perspectives',
+                doubao_point3: 'Collaborated with the algorithm team to align requirements, output national standard product requirement documents (PRD), clarified evaluation systems and acceptance criteria, synchronized research data and user behavior insights, assisted the algorithm team in optimizing model adaptation logic, and ensured the technical feasibility of the solution',
+                doubao_point4: 'Simultaneously conducted competitive model comparison evaluations for mainstream English speaking practice products, selected core oral training products, completed targeted comparative analysis around five core evaluation dimensions: ASR (accuracy), TTS (voice similarity, speech rate adaptability, pronunciation accuracy, gender matching, content hallucination), and reply content performance (accuracy, topic continuation ability, difficulty adaptability, scenario relevance), extracting product differentiation optimization directions',
+                voice_cloning_point1: 'Evaluated ROI of each strategy, positioned noise reduction effects and core technologies',
+                voice_cloning_point2: 'Clarified five core evaluation dimensions: voice similarity, speech rate adaptability, pronunciation accuracy, gender matching, and content hallucination, promoted multiple rounds of testing, and systematically compared the performance differences between 3 parameter adjustment strategies and the original online strategy',
+                voice_cloning_point3: 'Unified evaluation standards, identified key issues: including insufficient cloned voice similarity, overly fast speech rate, English accent deviation, gender errors, and content hallucination as model degradation points, and wrote evaluation reports',
+                voice_cloning_point4: 'Collaborated with the technical team to synchronize evaluation results, prioritized problem root cause analysis based on ROI, output targeted optimization suggestions, promoted alignment of strategy iteration directions, and provided data support for model performance improvement',
+                pdi_language_center_point2: 'Deeply participated in voice model iterations, focused on model effects and voice cloning strategy special evaluations, designed evaluation dimensions and use cases that fit business scenarios, and output model evaluation performance pain points',
+                pdi_language_center_point3: 'Responsible for ALLQA non-critical data acceptance work, sorted out core verification points such as data integrity and accuracy, assisted in establishing standardized verification processes, followed up on data quality verification and problem rectification throughout the process, ensuring that data input into models meets business and technical requirements',
+                asr_strategy_point2: 'Assisted in organizing content topic classification and difficulty grading logic, built the prototype of content quality system, and simultaneously cooperated in promoting Doubao English training review and evaluation mechanisms',
+                asr_strategy_point3: 'Participated in evaluation dimension design and process optimization, docking with the Data team on model optimization standards and evaluation indicators',
+                asr_strategy_point4: 'Supported Chinese-English/English-Chinese interpretation SFT simultaneous interpretation model training, labeling, and evaluation framework construction optimization tasks, conducted special evaluations on model effects and voice cloning strategies, and laid a solid foundation for product experience improvement',
+                english_teaching_point2: 'Through in-depth interaction with students of different ages and foundations, quickly and accurately captured their English learning pain points, and based on this, output adaptive learning plans',
+                english_teaching_point3: 'Established a closed-loop mechanism of "teaching feedback - teaching research iteration", continuously optimized teaching content based on student classroom performance and after-class feedback, strengthening the ability to understand student needs, accurately locate problems, and output targeted solutions',
+                cert_catti: 'CATTI Level 1 Interpreting (Highest Level, Only Single-digit Pass Rate in the Province)',
+                cert_catti_org: 'Ministry of Human Resources and Social Security of the People\'s Republic of China',
+                cert_catti_desc: 'National Translation Professional Qualification (Level) Examination Level 1 Interpreting Certificate, the highest level of professional certification in the translation industry',
+                cert_unlpp: 'UNLPP Interpreting P2',
+                cert_unlpp_org: 'United Nations Language Training System',
+                cert_unlpp_desc: 'United Nations Language Training System Interpreting P2 Certificate, with United Nations document translation ability',
+                cert_shanghai: 'Shanghai Foreign Language Advanced Interpreting Certificate',
+                cert_shanghai_org: 'Shanghai Foreign Language Interpreting Qualification Certificate Examination Committee',
+                cert_shanghai_desc: 'Shanghai Foreign Language Interpreting Certificate Examination Advanced Level, demonstrating advanced interpreting ability',
+                cert_bec: 'BEC Advanced',
+                cert_bec_org: 'Cambridge University Examination Board',
+                cert_bec_desc: 'Cambridge Business English Certificate Advanced, globally recognized proof of business English proficiency',
+                cert_toeic: 'TOEIC 890',
+                cert_toeic_org: 'Educational Testing Service',
+                cert_toeic_desc: 'TOEIC test score of 890, demonstrating professional English proficiency',
+                cert_medical: 'Medical English Level 4',
+                cert_medical_org: 'National Medical English Examination Committee',
+                cert_medical_desc: 'Medical English Professional Level 4 Certificate, demonstrating medical professional English proficiency',
+                lang_english: 'English (Fluent, Professional Interpreting/Translation)',
+                lang_cantonese: 'Cantonese (Daily Communication)',
+                lang_japanese: 'Japanese (Daily Communication)',
+                lang_indonesian: 'Indonesian (Daily Communication)',
+                lang_mandarin: 'Mandarin (Fluent, Grade 2 Level A)',
+                translation_international: 'International Events',
+                translation_international_desc: 'Belt and Road Seminars, World IoT Conference',
+                translation_government: 'Government & Embassies',
+                translation_government_desc: 'NDRC/MCT training courses, foreign embassies/ambassadors',
+                translation_corporate: 'Corporate & Medical',
+                translation_corporate_desc: 'Alibaba DMEG, medical expert exchanges, cultural tourism events',
+                simultaneous_academic: 'Academic & Diplomatic',
+                simultaneous_academic_desc: 'Renmin University forums, Japanese Ambassador to China, ISO meetings',
+                simultaneous_corporate: 'Corporate & Government',
+                simultaneous_corporate_desc: 'Top internet company technical conferences, Hebei Tourism Development Conference',
+                simultaneous_major: 'Major Events',
+                simultaneous_major_desc: 'China-Africa cooperation surveys, "Belt and Road" sustainable development forums',
+                skill_llm: 'Large Language Models',
+                skill_llm_desc: 'Proficient in using LLMs for content generation, summarization, question answering, and conversational AI applications',
+                skill_model: 'Model Optimization',
+                skill_model_desc: 'Experienced in fine-tuning models for specific use cases, optimizing hyperparameters, and improving model performance',
+                skill_data: 'Data Preparation',
+                skill_data_desc: 'Skilled in data collection, cleaning, feature engineering, and preparing datasets for model training and evaluation',
+                skill_ethics: 'AI Ethics & Responsible AI',
+                skill_ethics_desc: 'Knowledgeable about AI ethics, bias mitigation, fairness, transparency, and responsible AI deployment practices',
+                skill_business: 'Business Requirements Translation',
+                skill_business_desc: 'Capable of translating business requirements into technical specifications for AI solutions that deliver value',
+                scholarship_item: '2020-2023 | Three consecutive years of National Inspirational Scholarship and President\'s First-Class Scholarship',
+                award_item1: '2022-2025 | First Prize in National Industry + English Competence Competition (Medical Direction, College Group), First Prize in National College Business English Competition (English Major Group), First Prize in National College English Competition (Category B, National Level), First Prize in Semi-finals of Chinese Translation Competition (English-Chinese Translation, Medical)',
+                award_item2: '2022-2025 | Silver Award in FLTRP·Guocai Cup "Understanding Contemporary China" Interpreting National Competition, First Prize in Midwest Translation Competition Interpreting Finals, Second Prize and Special Prize (First Place) in Hubei Translation Competition Interpreting Finals, and many other major national and provincial English competition awards',
+                master_degree: 'Master - English Interpretation',
+                master_university: 'Renmin University of China',
+                master_gpa: 'GPA: 3.98/4.0 (Top 2% of major)',
+                master_awards: 'Awards: Second-Class Scholarship, University Merit Student',
+                bachelor_degree: 'Bachelor - Translation',
+                bachelor_university: 'Tianjin Foreign Studies University',
+                bachelor_gpa: 'GPA: 4.29/5.0 (Top 2% of major)',
+                bachelor_scholarship: 'Scholarships: Three consecutive years of National Inspirational Scholarship and President\'s First-Class Scholarship',
+                bachelor_admission: 'September 2023: Recommended for admission to Master\'s degree in English Interpretation at Renmin University of China',
+                project_indonesian_tts: 'Indonesian TTS Speech Synthesis System',
+                project_indonesian_tts_desc: 'Self-built Indonesian text-to-speech system that provides high-quality speech synthesis functionality.',
+                project_ai_translation: 'AI-assisted Translation Tool',
+                project_ai_translation_desc: 'Translation assistance tool developed with machine learning and NLP technologies to improve professional translation efficiency and accuracy.',
+                project_youtube_subtitle: 'YouTube Subtitle Scraper',
+                project_youtube_subtitle_desc: 'YouTube subtitle automatic download and conversion tool developed using yt-dlp library, supporting English subtitle extraction and format conversion.',
+                view_project: 'View Project',
+                company_bytedance: 'Bytedance',
+                tag_product_management: 'Product Management',
+                tag_user_research: 'User Research',
+                tag_competitive_analysis: 'Competitive Analysis',
+                tag_prd_writing: 'PRD Writing',
+                tag_model_evaluation: 'Model Evaluation',
+                tag_data_analysis: 'Data Analysis',
+                tag_strategy_optimization: 'Strategy Optimization',
+                tag_report_writing: 'Report Writing',
+                freelancer: 'Freelancer',
+                period_present: '2021 - Present'
+            },
+            zh: {
+                about: '关于我',
+                skills: '技能',
+                projects: '项目',
+                experience: '经历',
+                education: '教育',
+                contact: '联系',
+                language: 'English',
+                hero_title: '你好，我是牛楷',
+                hero_subtitle: '人工智能产品经理候选人',
+                hero_desc: '热衷于利用人工智能解决复杂问题，创造以用户为中心的产品，提供卓越价值。拥有强大的翻译和口译背景，以及人工智能产品管理的实践经验。',
+                contact_me: '联系我',
+                view_projects: '查看项目',
+                about_title: '关于我',
+                about_desc: '一位结果导向的专业人士，拥有强大的技术背景和人工智能技术实践经验，致力于创造创新的产品解决方案。',
+                technical_skills: '技术技能',
+                product_management: '产品管理',
+                ai_expertise: '人工智能专长',
+                soft_skills: '软技能',
+                core_competencies: '核心能力',
+                skills_desc: '我的技术和专业技能，使我成为人工智能产品经理职位的理想候选人。',
+                technical_skills_title: '技术技能',
+                language_skills_title: '语言与软技能',
+                tools_technologies: '工具与技术',
+                ai_project_experience: '人工智能项目经验',
+                projects_desc: '展示我在人工智能技术和产品开发方面的实践经验。',
+                doubao_project: '豆包英语口语练习核心项目全流程优化',
+                doubao_project_desc: '作为项目Owner牵头全流程推进，定义调研边界与细分人群（职场晋升面试、留学雅思备考、日常交流用户），通过多维度研究方法系统拆解用户痛点。',
+                voice_cloning_project: '音色克隆模型稳定性评测优化',
+                voice_cloning_project_desc: '作为项目Owner牵头全流程评测，明确总理新闻发布会、内部技术会议场景的评测标准，搭建"策略对比+效果量化"评测框架，聚焦ROI核心目标设计对比方案。',
+                professional_experience: '专业经验',
+                experience_desc: '我的工作经验和对人工智能与产品管理项目的贡献。',
+                pdi_language_center: '产品研发与工程架构-PDI语言中心',
+                pdi_language_center_desc: '为PICO、TT及Data团队提供日常笔译、同声传译等专业语言支持，覆盖产品需求文档、InfoSec培训及跨团队沟通材料等场景，保障中外协作顺畅。',
+                asr_strategy: '音视频模型-语音-ASR策略与交付',
+                asr_strategy_desc: '参与豆包英语口语练习核心项目全流程优化，覆盖数据供应商筛选、资质审核及语料质量基础校验等供应商管理工作。',
+                english_teaching: '英语+口译教研',
+                english_teaching_desc: '深耕英语全年龄段教研与授课工作，覆盖学龄前儿童至成人全学段，在教学实践中积累了扎实的学情分析与研究能力。',
+                education_certifications: '教育与证书',
+                education_desc: '我的学术背景和专业证书，支持我成为人工智能产品经理。',
+                master_english: '硕士 - 英语口译',
+                bachelor_translation: '学士 - 翻译专业',
+                certifications: '证书',
+                professional_translation: '专业翻译经验',
+                translation_desc: '在国际活动、政府会议和企业会议中拥有丰富的交替传译和同声传译经验。',
+                consecutive_interpreting: '交替传译',
+                simultaneous_interpreting: '同声传译',
+                international_events: '国际活动',
+                government_embassies: '政府与使馆',
+                corporate_medical: '企业与医疗',
+                academic_diplomatic: '学术与外交',
+                corporate_government: '企业与政府',
+                major_events: '重大活动',
+                ai_skills: '人工智能技能展示',
+                ai_skills_desc: '我在应用人工智能技术解决实际问题方面的实践经验和专业知识。',
+                large_language_models: '大型语言模型',
+                model_optimization: '模型优化',
+                data_preparation: '数据准备',
+                ai_ethics: '人工智能伦理与负责任AI',
+                business_requirements: '业务需求转化',
+                get_in_touch: '联系我',
+                contact_desc: '有兴趣讨论我如何作为人工智能产品经理为您的团队做出贡献吗？联系我！',
+                contact_information: '联系信息',
+                phone: '电话',
+                email: '邮箱',
+                location: '地点',
+                connect_with_me: '与我联系',
+                send_message: '给我发消息',
+                name: '姓名',
+                subject: '主题',
+                message: '消息',
+                send: '发送消息',
+                awards_honors: '奖项与荣誉',
+                awards_desc: '展示我在学术和专业追求中的奉献精神和卓越成就。',
+                scholarships: '奖学金',
+                competitions_awards: '竞赛与奖项',
+                ready_to_innovate: '准备创新',
+                personal_projects: '个人项目',
+                doubao_point1: '通过问卷调研（回收有效样本2000+）、深度用户访谈（50+人次）、产品后台数据痛点分析等多维度手段，系统拆解不同人群的使用场景、回复机制偏好、缺乏持续练习动力等核心诉求',
+                doubao_point2: '基于用户画像与痛点评析，主导设计差异化解决方案：搭建"初级-中级-高级"三级别难度分层体系（匹配不同英语基础用户），制定场景对话的输出逻辑规范（强化自然与适配性），从内容、交互等方面优化用户使用体验',
+                doubao_point3: '联动算法团队完成需求对齐，输出国家标准产品需求文档（PRD），明确评测体系与验收标准，同步调研数据与用户行为洞察，协助算法团队优化模型适配逻辑，保障解决方案的技术落地可行性',
+                doubao_point4: '同步开展主流英语口语练习竞品模型对比评测，选取主流口语训练核心产品，围绕ASR（准确率）、TTS（音色自然度、语调流畅性、情感贴合度、生成连贯性）与回复内容表现（准确性、话题承接推进力、难易度适配性、场景贴合度）核心维度，完成针对性对比分析，提炼产品差异化优化方向',
+                voice_cloning_point1: '评测各策略ROI，定位降噪效果、内核技术',
+                voice_cloning_point2: '明确音色相似度、语速适配性、发音准确性、性别匹配度、内容幻觉五大核心评测维度，推动多轮测试，系统性对比3种参数调整策略与线上原有策略的表现差异',
+                voice_cloning_point3: '拉齐评价标准，梳理关键问题：包括克隆音色相似度不足、语速过快、英语口音偏差、性别错误及内容幻觉等模型劣化点，并撰写评估报告',
+                voice_cloning_point4: '联动技术团队同步评测结果，基于ROI优先拆解问题根因，输出针对性优化建议，推动策略迭代方向对齐，为模型效果提升提供数据支撑',
+                pdi_language_center_point2: '深度参与语音模型迭代，聚焦模型效果及音色克隆策略开展专项评测，设计贴合业务场景的评测维度与用例，输出模型评测表现痛点',
+                pdi_language_center_point3: '负责ALLQA non-critical数据验收工作，梳理数据完整性、准确性等核心校验要点，协助建立标准化校验流程，全程跟进数据质量核查与问题整改，确保输入模型的数据符合业务及技术要求',
+                asr_strategy_point2: '协助梳理内容话题分类与难度分级逻辑，搭建内容质量体系雏形，同时配合推进豆包英语训练复盘评测机制',
+                asr_strategy_point3: '参与评测维度设计与流程优化，对接Data团队对模型优化标准与评估指标',
+                asr_strategy_point4: '支持汉英/英汉口译SFT同传模型训练、制标与评测框架搭建等优化任务，对模型效果及音色克隆策略开展专项评测，为产品体验提升夯实基础',
+                english_teaching_point2: '通过与不同年龄、基础的学生深度互动，快速精准捕捉其英语学习痛点，基于此输出适配性学习方案',
+                english_teaching_point3: '建立"教学反馈-教研迭代"的闭环机制，结合学生课堂表现、课后反馈持续优化教学内容，强化对学生需求的洞察、精准定位及针对性解决方案输出的能力',
+                cert_catti: 'CATTI一级口译（最高级，全省通过人数个位数）',
+                cert_catti_org: '中华人民共和国人力资源和社会保障部',
+                cert_catti_desc: '全国翻译专业资格（水平）考试一级口译证书，翻译行业最高级别的专业认证',
+                cert_unlpp: 'UNLPP口译P2',
+                cert_unlpp_org: '联合国语言人才培训体系',
+                cert_unlpp_desc: '联合国语言人才培训体系口译P2级证书，具备联合国文件翻译能力',
+                cert_shanghai: '上海外语口译高级口译证书',
+                cert_shanghai_org: '上海市外语口译岗位资格证书考试委员会',
+                cert_shanghai_desc: '上海外语口译证书考试高级，证明高级口译能力',
+                cert_bec: 'BEC高级',
+                cert_bec_org: '剑桥大学考试委员会',
+                cert_bec_desc: '剑桥商务英语证书高级，全球认可的商务英语能力证明',
+                cert_toeic: '托业890',
+                cert_toeic_org: '美国教育考试服务中心',
+                cert_toeic_desc: '托业考试成绩890分，证明专业英语能力',
+                cert_medical: '医学英语四级',
+                cert_medical_org: '全国医学英语考试委员会',
+                cert_medical_desc: '医学英语专业四级证书，证明医学专业英语能力',
+                lang_english: '英语（流利，专业口译/笔译）',
+                lang_cantonese: '粤语（日常交流）',
+                lang_japanese: '日语（日常交流）',
+                lang_indonesian: '印尼语（日常交流）',
+                lang_mandarin: '普通话（流利，二级甲等）',
+                translation_international: '国际活动',
+                translation_international_desc: '一带一路研讨会，世界物联网大会',
+                translation_government: '政府与使馆',
+                translation_government_desc: '国家发改委/工信部培训课程，外国使馆/大使',
+                translation_corporate: '企业与医疗',
+                translation_corporate_desc: '阿里巴巴达摩院，医疗专家交流，文化旅游活动',
+                simultaneous_academic: '学术与外交',
+                simultaneous_academic_desc: '人民大学论坛，日本驻华大使，ISO会议',
+                simultaneous_corporate: '企业与政府',
+                simultaneous_corporate_desc: '顶级互联网公司技术会议，河北旅游发展大会',
+                simultaneous_major: '重大活动',
+                simultaneous_major_desc: '中非合作调研，"一带一路"可持续发展论坛',
+                skill_llm: '大型语言模型',
+                skill_llm_desc: '熟练使用大型语言模型进行内容生成、摘要、问答和对话式AI应用',
+                skill_model: '模型优化',
+                skill_model_desc: '经验丰富，能够针对特定用例微调模型，优化超参数，提高模型性能',
+                skill_data: '数据准备',
+                skill_data_desc: '擅长数据收集、清洗、特征工程，为模型训练和评估准备数据集',
+                skill_ethics: '人工智能伦理与负责任AI',
+                skill_ethics_desc: '了解人工智能伦理、偏见缓解、公平性、透明度和负责任AI部署实践',
+                skill_business: '业务需求转化',
+                skill_business_desc: '能够将业务需求转化为AI解决方案的技术规范，交付有价值的结果',
+                scholarship_item: '2020-2023 | 连续三年获得国家励志奖学金、校长一等奖学金',
+                award_item1: '2022-2025 | 先后获全国行业+英语能力大赛医学方向高校组一等奖、全国高校商务英语竞赛英语专业组一等奖、全国大学生英语竞赛B类国家级一等奖、中华笔译大赛英汉互译（医学）半决赛一等奖',
+                award_item2: '2022-2025 | 外研社·国才杯理解当代中国口译国赛银奖、中西部翻译大赛口译决赛一等奖、湖北省翻译大赛口译决赛二等奖与特等奖（第一名）等多项国家级、省级英语赛事重大奖',
+                master_degree: '硕士 - 英语口译',
+                master_university: '中国人民大学',
+                master_gpa: 'GPA: 3.98/4.0 (专业前2%)',
+                master_awards: '奖项: 二等奖学金、校三好学生',
+                bachelor_degree: '学士 - 翻译',
+                bachelor_university: '天津外国语大学',
+                bachelor_gpa: 'GPA: 4.29/5.0 (专业前2%)',
+                bachelor_scholarship: '奖学金: 连续三年获得国家励志奖学金、校长一等奖学金',
+                bachelor_admission: '2023年09月保送中国人民大学英语口译专业硕士学位',
+                project_indonesian_tts: '印尼语TTS语音合成系统',
+                project_indonesian_tts_desc: '自主搭建的印尼语文本转语音系统，提供高质量的语音合成功能。',
+                project_ai_translation: 'AI辅助翻译工具',
+                project_ai_translation_desc: '结合机器学习和NLP技术开发的翻译辅助工具，提高专业翻译效率和准确性。',
+                project_youtube_subtitle: 'YouTube字幕爬取脚本',
+                project_youtube_subtitle_desc: '使用yt-dlp库开发的YouTube字幕自动下载和转换工具，支持英语字幕提取和格式转换。',
+                view_project: '查看项目',
+                company_bytedance: '字节跳动',
+                tag_product_management: '产品管理',
+                tag_user_research: '用户研究',
+                tag_competitive_analysis: '竞品分析',
+                tag_prd_writing: 'PRD撰写',
+                tag_model_evaluation: '模型评测',
+                tag_data_analysis: '数据分析',
+                tag_strategy_optimization: '策略优化',
+                tag_report_writing: '报告撰写',
+                freelancer: '自由职业',
+                period_present: '2021 - 至今'
+            }
+        };
+
+        // Current language
+        let currentLang = 'en';
+
+        // Function to switch language
+        function switchLanguage() {
+            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            updateLanguage();
+        }
+
+        // Function to update language
+        function updateLanguage() {
+            const langData = translations[currentLang];
+            
+            // Update all elements with data-lang-key attribute
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (langData[key]) {
+                    element.textContent = langData[key];
+                }
+            });
+
+            // Update page title
+            document.title = currentLang === 'en' ? 'AI Product Manager Resume' : '人工智能产品经理简历';
+
+            // Update navigation logo
+            document.querySelector('nav a.text-gradient').textContent = currentLang === 'en' ? 'AI PM Resume' : 'AI产品经理简历';
+        }
+
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Language Toggle
+        document.getElementById('lang-toggle').addEventListener('click', switchLanguage);
+        document.getElementById('mobile-lang-toggle').addEventListener('click', switchLanguage);
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Animate Skill Bars on Scroll
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.parentElement.previousElementSibling.querySelector('span:last-child').textContent;
+                bar.style.width = width;
+            });
+        }
+        
+        // Intersection Observer for Skill Bars
+        const skillsSection = document.getElementById('skills');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+        
+        // Contact Form Submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                alert(currentLang === 'en' ? 'Please fill in all fields' : '请填写所有字段');
+                return;
+            }
+            
+            // Simulate form submission
+            alert(currentLang === 'en' ? 'Thank you for your message! I will get back to you soon.' : '感谢您的消息！我会尽快回复您。');
+            this.reset();
+        });
+        
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('shadow-sm');
+            }
+        });
+
+        // Initialize language
+        window.addEventListener('DOMContentLoaded', updateLanguage);
+    </script>
+</body>
+</html>
